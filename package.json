@@ -1,0 +1,24 @@
+{
+  "name": "motion-show",
+  "version": "0.0.1",
+  "description": "motion show",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ielgnaw/motion-show.git"
+  },
+  "keywords": [
+    "motion",
+    "css3",
+    "animation"
+  ],
+  "author": "ielgnaw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ielgnaw/motion-show/issues"
+  },
+  "homepage": "https://github.com/ielgnaw/motion-show#readme"
+}
