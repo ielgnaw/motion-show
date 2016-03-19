@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="src/css/index.css">
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="dep/esl/esl.js"></script>
+        <!-- <script src="dep/qrcode/qrcode.js"></script> -->
+        <style>
+            #css-editor {
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="css-editor">body {
+    color: #fff;
+}
+        </div>
+        <script src="/require.config.js"></script>
+        <script src="/dep/ace/ace.min.js"></script>
+        <script src="/dep/ace/theme-monokai.js"></script>
+        <script src="/dep/ace/mode-javascript.js"></script>
+        <script src="/dep/ace/mode-css.js"></script>
+        <script src="/dep/ace/mode-html.js"></script>
+        <script src="/dep/ace/mode-less.js"></script>
+        <script>
+            require(['ace-test'], function (at) {
+                at.init();
+            });
+        </script>
+        <!-- <script src="/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var editor = ace.edit("editor");
+            editor.setTheme("ace/theme/monokai");
+            editor.getSession().setMode("ace/mode/javascript");
+        </script> -->
+    </body>
+</html>
