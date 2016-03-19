@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="src/css/index.css">
+        <!-- <script src="/socket.io/socket.io.js"></script> -->
+        <script src="dep/esl/esl.js"></script>
+        <!-- <script src="dep/qrcode/qrcode.js"></script> -->
+    </head>
+    <body>
+        <button id="ajax">ajax</button>
+        <script src="/nav.js"></script>
+        <script src="/test.js"></script>
+        <script src="/require.config.js"></script>
+        <script>
+            require(['main'], function (main) {
+                main.start();
+            });
+        </script>
+    </body>
+</html>
