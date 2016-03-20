@@ -33,6 +33,13 @@ define(function (require) {
         editor.setOption('highlightActiveLine', false);
 
         var codeVal = editor.getSession().getValue();
+
+        var beautified = cssbeautify(codeVal, {
+            indent: '    ',
+            autosemicolon: true
+        });
+        editor.getSession().setValue(beautified);
+
         // editor.getSession().setValue(codeVal);
         // editor.getSession().setTabSize(4);
         // editor.getSession().setUseWrapMode(true);
@@ -61,7 +68,11 @@ define(function (require) {
     var exports = {};
 
     exports.init = function () {
-        console.warn(13);
+        $('#css-editor').html(''
+            + 'a {'
+            +     'color: red;'
+            + '}'
+        );
         initAceEditor('css');
         $('#css-editor').height(500);
     };
