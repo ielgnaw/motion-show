@@ -1,19 +1,22 @@
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
+var lessCompiler = require('express-less-middleware')();
 
 exports.init = function (app) {
 
+    app.use(lessCompiler);
+
     // for parsing application/json
     app.use(bodyParser.json());
 
     // for parsing application/x-www-form-urlencoded
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.urlencoded({extended: true}));
     // for parsing application/json
     app.use(bodyParser.json());
 
     // for parsing application/x-www-form-urlencoded
-    app.use(bodyParser.urlencoded({ extended: true }));
+    app.use(bodyParser.urlencoded({extended: true}));
 
     exports.routeNav(app);
     exports.routeRequireConfig(app);
@@ -71,6 +74,11 @@ exports.routeRequireConfig = function (app) {
                 name: 'jquery',
                 location: '../dep/jquery/1.9.1/src',
                 main: 'jquery.min'
+            },
+            {
+                'name': 'est',
+                'location': '../dep/est/2.0.4/src',
+                'main': 'lib/index'
             }
         ]
     };
