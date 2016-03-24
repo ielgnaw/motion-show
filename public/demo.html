@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>motion-show</title>
+        <meta name="keywords" content="motion-show" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <meta name="format-detection" content="telphone=no" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="src/css/demo.css">
+        <script src="dep/esl/esl.js"></script>
+        <script src="dep/cssbeautify/cssbeautify.js"></script>
+    </head>
+    <body>
+        <div id="main-container">
+            <div id="code-container" style="width: 50%; height: 100%; display: block;">
+                <div id="control-panel">
+                    <div id="code-info">
+                        test-info
+                    </div>
+                    <div class="control-btn-panel">
+                    <a href="javascript:;" class="btn btn-default btn-sm">run</a>
+                    </div>
+                </div>
+                <div id="code-panel"></div>
+            </div>
+            <div id="h-handler" class="handler" style="left: 50%; display: block;"></div>
+            <div class="right-container" style="width: 50%; left: 50%;">
+                <div id="chart-panel" class="right-panel" style="-webkit-tap-highlight-color: transparent; -webkit-user-select: none; background-color: rgb(64, 74, 89);">
+                </div>
+            </div>
+        </div>
+        <script src="/nav.js"></script>
+        <script src="/test.js"></script>
+        <script src="/require.config.js"></script>
+        <script src="/dep/ace/ace.min.js"></script>
+        <script src="/dep/ace/theme-chrome.js"></script>
+        <script src="/dep/ace/mode-javascript.js"></script>
+        <script src="/dep/ace/mode-css.js"></script>
+        <script src="/dep/ace/mode-html.js"></script>
+        <script src="/dep/ace/mode-less.js"></script>
+        <script>
+            require(['demo'], function (demo) {
+                demo.init();
+            });
+        </script>
+    </body>
+</html>

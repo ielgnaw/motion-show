@@ -9,126 +9,126 @@ define(function (require) {
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/angelababy',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/angelababy.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/bzhan',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/bzhan.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/chenweiting',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/chenweiting.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/dunkengle',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/dunkengle.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/huangbo',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/huangbo.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/kuanianhongbao',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/kuanianhongbao.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/mid-autumn',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/mid-autumn.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/music',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/music.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/quanxi-xiaodu',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/quanxi-xiaodu.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/ssgsports',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/ssgsports.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/starking',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/starking.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/summerparty',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/summerparty.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/variety',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/variety.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/xingjiuling',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/xingjiuling.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/activity/yashilandai',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/yashilandai.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/landingpage/guide',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/landingpage-guide.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/immersion/music',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/immersion-music.png'
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/immersion/poem',
+            link: '/demo.html',
             desc: '',
             qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/immersion-poem.png'
         }
@@ -175,14 +175,8 @@ define(function (require) {
                 +       '</p>'
                 +       '<footer>'
                 +           '<a href="' + project.link + '" target="_blank" class="btn-play">'
-                +               '预览项目'
+                +               '查看示例'
                 +           '</a>'
-                +           '<div class="qr-wrap">'
-                +               '<span class="qr"></span>'
-                +               '<div class="game-qr">'
-                +                   '<img src="' + project.qrUrl + '">'
-                +               '</div>'
-                +           '</div>'
                 +       '</footer>'
                 +   '</div>'
                 + '</div>';
