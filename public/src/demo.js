@@ -22,7 +22,7 @@ define(function (require) {
      */
     function initAceEditor(type) {
         // var editor = ace.edit(type + '-editor');
-        var editor = ace.edit('code-panel');
+        var editor = ace.edit('code');
 
         editor.$blockScrolling = Infinity;
         editor.setTheme('ace/theme/chrome');
@@ -69,15 +69,15 @@ define(function (require) {
     var exports = {};
 
     exports.init = function () {
-        $('#code-panel').html(''
-            + 'a {'
+        $('#code').html(''
+            + 'a d{'
             +     'color: red;'
             + '}'
         );
         initAceEditor('css');
-        $('#code-panel').css({
+        $('#code').css({
             'height': '100%',
-            'margin-top': '30px'
+            // 'margin-top': '30px'
         });
     };
 

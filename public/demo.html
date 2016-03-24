@@ -15,21 +15,37 @@
         <script src="dep/cssbeautify/cssbeautify.js"></script>
     </head>
     <body>
-        <div id="main-container">
-            <div id="code-container" style="width: 50%; height: 100%; display: block;">
-                <div id="control-panel">
+        <div class="container">
+            <div class="code-container" style="width: 50%; height: 100%; display: block;">
+                <!-- <div id="control-panel">
                     <div id="code-info">
                         test-info
                     </div>
                     <div class="control-btn-panel">
-                    <a href="javascript:;" class="btn btn-default btn-sm">run</a>
+                        <a href="javascript:;" class="btn btn-default btn-sm">run</a>
                     </div>
-                </div>
-                <div id="code-panel"></div>
+                </div> -->
+                <div id="code"></div>
             </div>
-            <div id="h-handler" class="handler" style="left: 50%; display: block;"></div>
+            <div class="handler-container"></div>
             <div class="right-container" style="width: 50%; left: 50%;">
-                <div id="chart-panel" class="right-panel" style="-webkit-tap-highlight-color: transparent; -webkit-user-select: none; background-color: rgb(64, 74, 89);">
+                <div class="right-panel">
+                    <div class="simulate-device ip6p black">
+                        <div class="top-bar"></div>
+                        <div class="sleep"></div>
+                        <div class="volume"></div>
+                        <div class="camera"></div>
+                        <div class="sensor"></div>
+                        <div class="speaker"></div>
+                        <iframe src="/frame.html" id="iframe" name="iframe" class="screen" frameborder="0" width="100%" height="100%"></iframe>
+                        <div class="home"></div>
+                        <div class="bottom-bar"></div>
+                    </div>
+                    <!-- <div class="iframe-container">
+                        <div class="iphone-earphone"></div>
+                        <iframe src="/frame.html" id="iframe" name="iframe" class="iframe" frameborder="0" width="100%" height="10%"></iframe>
+                        <div class="iphone-touch"></div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -38,9 +54,7 @@
         <script src="/require.config.js"></script>
         <script src="/dep/ace/ace.min.js"></script>
         <script src="/dep/ace/theme-chrome.js"></script>
-        <script src="/dep/ace/mode-javascript.js"></script>
         <script src="/dep/ace/mode-css.js"></script>
-        <script src="/dep/ace/mode-html.js"></script>
         <script src="/dep/ace/mode-less.js"></script>
         <script>
             require(['demo'], function (demo) {
