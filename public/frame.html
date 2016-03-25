@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
     <head>
@@ -6,8 +5,6 @@
         <title>motion-show</title>
         <meta name="keywords" content="motion-show" />
         <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0"/>
-        <!-- <meta name="viewport" content="width=100, initial-scale=3.6, maximum-scale=3.6, minimum-scale=3.6, user-scalable=no, target-densitydpi=device-dpi, minimal-ui"/> -->
-
         <meta name="format-detection" content="telphone=no" />
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta content="black" name="apple-mobile-web-app-status-bar-style" />
@@ -16,32 +13,29 @@
         <script src="dep/esl/esl.js"></script>
     </head>
     <body>
-        <section id="content"></section>
-        <div id="loading">
-            <span>查看更多...</span>
-        </div>
         <script src="/nav.js"></script>
         <script src="/test.js"></script>
         <script src="/require.config.js"></script>
         <script>
-            var globalData = {};
+            // var globalData = {};
 
-            (function () {
-                var width = document.documentElement.clientWidth;
-                var height = document.documentElement.clientHeight;
-                globalData.width = width;
-                globalData.height = height;
+            // (function () {
+            //     var width = document.documentElement.clientWidth;
+            //     var height = document.documentElement.clientHeight;
+            //     globalData.width = width;
+            //     globalData.height = height;
 
-                var supportTouch = ('ontouchstart' in window)
-                    || window.DocumentTouch && document instanceof window.DocumentTouch;
+            //     var supportTouch = ('ontouchstart' in window)
+            //         || window.DocumentTouch && document instanceof window.DocumentTouch;
 
-                globalData.touchStartEvent = (supportTouch ? 'touchstart' : 'mousedown');
-                globalData.touchMoveEvent = (supportTouch ? 'touchmove' : 'mousemove');
-                globalData.touchEndEvent = (supportTouch ? 'touchend' : 'mouseup');
-            })();
-            require(['index'], function (index) {
-                index.init();
-            });
+            //     globalData.touchStartEvent = (supportTouch ? 'touchstart' : 'mousedown');
+            //     globalData.touchMoveEvent = (supportTouch ? 'touchmove' : 'mousemove');
+            //     globalData.touchEndEvent = (supportTouch ? 'touchend' : 'mouseup');
+            // })();
+
+            // require(['index'], function (index) {
+            //     index.init();
+            // });
         </script>
     </body>
 </html>

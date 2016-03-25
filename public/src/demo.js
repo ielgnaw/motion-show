@@ -9,8 +9,6 @@ define(function (require) {
 
     var abs = Math.abs;
 
-    var dragNode = $('.handler-container');
-
     /**
      * ace编辑器
      *
@@ -68,12 +66,19 @@ define(function (require) {
 
         editor.on('change', function (evt) {
         });
+    }
 
+    function checkHash() {
+        var hash = window.location.hash;
+        if (hash) {
+            hash = hash.substring(1);
+        }
     }
 
     var exports = {};
 
     exports.init = function () {
+        checkHash();
         $('#code').html(''
             + 'a d{'
             +     'color: red;'
