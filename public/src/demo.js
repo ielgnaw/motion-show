@@ -7,6 +7,10 @@ define(function (require) {
 
     var $ = require('jquery');
 
+    var abs = Math.abs;
+
+    var dragNode = $('.handler-container');
+
     /**
      * ace编辑器
      *
@@ -29,7 +33,7 @@ define(function (require) {
 
         editor.getSession().setUseWorker(false);
         editor.getSession().setMode('ace/mode/' + type);
-
+        editor.setOption("showPrintMargin", false);
         editor.setOption('wrap', false);
         editor.setOption('highlightActiveLine', false);
 
@@ -40,6 +44,7 @@ define(function (require) {
             autosemicolon: true
         });
         editor.getSession().setValue(beautified);
+        editor.getSession().selection.selectAll();
 
         // editor.getSession().setValue(codeVal);
         // editor.getSession().setTabSize(4);
@@ -75,10 +80,6 @@ define(function (require) {
             + '}'
         );
         initAceEditor('css');
-        $('#code').css({
-            'height': '100%',
-            // 'margin-top': '30px'
-        });
     };
 
     return exports;
