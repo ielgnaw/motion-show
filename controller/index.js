@@ -1,11 +1,11 @@
 var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
-var lessCompiler = require('express-less-middleware')();
+var lessCompiler = require('express-less-middleware');
 
 exports.init = function (app) {
 
-    app.use(lessCompiler);
+    app.use(lessCompiler());
 
     // for parsing application/json
     app.use(bodyParser.json());
@@ -23,6 +23,11 @@ exports.init = function (app) {
 
     exports.routeTest(app);
     exports.routeAjaxTest(app);
+};
+
+// TODO: 把基础的 less 编译成 css 并发送到前端，便于前端获取基础的 css 代码
+exports.routeBaseCSS = function (app) {
+
 };
 
 exports.routeNav = function (app) {

@@ -119,6 +119,19 @@ function start(port) {
         }
     });
 
+    var publicFiles = fs.readdirSync(__dirname + '/public');
+    publicFiles.forEach(function (publicFile) {
+        var dir = path.resolve(__dirname, publicFile);
+        console.warn(publicFile, dir);
+        // var indexFile = path.resolve(dir, 'index.js');
+        // if (fs.statSync(dir).isDirectory() && fs.existsSync(indexFile)) {
+        //     var indexModule = require(indexFile);
+        //     if (typeof indexModule.init === 'function') {
+        //         indexModule.init(app);
+        //     }
+        // }
+    });
+
     var server = app.listen(port);
     // startWebSocketServer(server);
 
