@@ -9,128 +9,111 @@ define(function (require) {
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
-            link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/angelababy.png'
+            // link: '/demo.html?name=hb-rain',
+            link: '/demo',
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/bzhan.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/chenweiting.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/dunkengle.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/huangbo.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/kuanianhongbao.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/mid-autumn.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/music.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/quanxi-xiaodu.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/ssgsports.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/starking.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/summerparty.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/variety.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/xingjiuling.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/yashilandai.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/landingpage-guide.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/immersion-music.png'
+            desc: ''
         },
         {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             link: '/demo.html',
-            desc: '',
-            qrUrl: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/project-collection/immersion-poem.png'
+            desc: ''
         }
     ];
 

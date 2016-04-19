@@ -26,6 +26,9 @@ exports.init = function (app) {
     exports.routeTest(app);
     exports.routeAjaxTest(app);
 
+
+    exports.routeT(app);
+
     ajax.init(app);
 };
 
@@ -140,5 +143,13 @@ exports.routeAjaxTest = function (app) {
         res.setHeader('Content-Type', 'text/javascript; charset=UTF-8');
         res.end(content);
     });
+};
 
+exports.routeT = function (app) {
+    app.get('/demo', function (req, res) {
+        res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+        res.sendFile(path.resolve(__dirname, 'aaa.tpl'));
+        // res.end('content');
+        // res.redirect('http://baidu.com');
+    });
 };

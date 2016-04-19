@@ -74,8 +74,10 @@ define(function (require) {
 
     function checkHash() {
         var hash = window.location.hash;
+        console.warn(window.location);
         if (hash) {
             hash = hash.substring(1);
+            console.warn(hash);
         }
     }
 
@@ -83,50 +85,16 @@ define(function (require) {
 
     exports.init = function () {
         checkHash();
-        // $('#html-code').html(encodeURI(''
-        //     + '<div class="hb-rain-container">'
-        //     +   '<div class="hb-rain">'
-        //     +       '<div class="hb-rain-content"></div>'
-        //     +       '<div class="hb-rain-left-wing"></div>'
-        //     +       '<div class="hb-rain-right-wing"></div>'
-        //     +   '</div>'
-        //     + '</div>')
-        //     // + 'a d{'
-        //     // +     'color: red;'
-        //     // + '}'
-        // );
-        // initAceEditor('html');
-
-        // $.ajax({
-        //     method: 'post',
-        //     url: '/format/html?aaa=1',
-        //     dataType: 'json',
-        //     data: {
-        //         content: ''
-        //             + '<div class="1hb-rain-container">'
-        //             +   '<div class="1hb-rain">'
-        //             +       '<div class="1hb-rain-content"></div>'
-        //             +       '<div class="1hb-rain-left-wing"></div>'
-        //             +       '<div class="1hb-rain-right-wing"></div></div></div>'
-        //     }
-        // }).then(function (data, textStatus, jqXHR) {
-        //     htmlContainer.html(encodeURI(data.data.content));
-        // }, function (jqXHR, textStatus, errorThrown) {
-        //     htmlContainer.html('解析 html 代码错误');
-        // }).always(function () {
-        //     initAceEditor('html');
-        // });
-
         $.ajax({
             method: 'post',
             url: '/format/htmlcss',
             dataType: 'json',
             data: {
                 htmlContent: ''
-                    + '<div class="1hb-rain-container">'
-                    +   '<div class="1hb-rain">'
-                    +       '<div class="1hb-rain-content"></div><div class="1hb-rain-left-wing"></div>'
-                    +       '<div class="1hb-rain-right-wing"></div></div></div>',
+                    + '<div class="hb-rain-container">'
+                    +   '<div class="hb-rain">'
+                    +       '<div class="hb-rain-content"></div><div class="hb-rain-left-wing"></div>'
+                    +       '<div class="hb-rain-right-wing"></div></div></div>',
                 cssContent: 'a{color:red;}'
             }
         }).then(function (data, textStatus, jqXHR) {
