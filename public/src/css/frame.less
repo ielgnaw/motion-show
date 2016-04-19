@@ -163,7 +163,7 @@ html {
     }
 }
 
-@-webkit-keyframes 'leftWing' {
+@-webkit-keyframes leftWing {
     0% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
@@ -185,7 +185,7 @@ html {
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
     }
 }
-@keyframes 'leftWing' {
+@keyframes leftWing {
     0% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
@@ -208,7 +208,7 @@ html {
     }
 }
 
-@-webkit-keyframes 'rightWing' {
+@-webkit-keyframes rightWing {
     0% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
@@ -230,7 +230,8 @@ html {
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
     }
 }
-@keyframes 'rightWing' {
+// 注意 keyframes 名字加上引号后，FF 不可用
+@keyframes rightWing {
     0% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
@@ -260,10 +261,12 @@ html {
     .hb-rain {
         z-index: @baseZIndex - 4;
         position: absolute;
-        top: 200px;
-        left: 100px;
+        top: 50%;
+        left: 50%;
         width: 82px;
         height: 88px;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
         .removeBlur();
         .hb-rain-content {
             position: absolute;

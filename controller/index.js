@@ -3,6 +3,8 @@ var fs = require('fs');
 var path = require('path');
 var lessCompiler = require('express-less-middleware');
 
+var ajax = require('./ajax');
+
 exports.init = function (app) {
 
     app.use(lessCompiler());
@@ -23,6 +25,8 @@ exports.init = function (app) {
 
     exports.routeTest(app);
     exports.routeAjaxTest(app);
+
+    ajax.init(app);
 };
 
 // TODO: 把基础的 less 编译成 css 并发送到前端，便于前端获取基础的 css 代码

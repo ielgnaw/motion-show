@@ -21,6 +21,7 @@
     "ejs": "^2.3.1",
     "express": "4.x",
     "express-less-middleware": "^1.4.4",
+    "js-beautify": "^1.6.2",
     "js-yaml": "3.1.x",
     "less": "^2.6.1"
   },

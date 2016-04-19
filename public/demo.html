@@ -12,17 +12,12 @@
         <meta content="telephone=no" name="format-detection" />
         <link rel="stylesheet" type="text/css" href="src/css/demo.css">
         <script src="dep/esl/esl.js"></script>
-        <script src="dep/cssbeautify/cssbeautify.js"></script>
     </head>
     <body>
         <div class="container">
             <div class="code-container">
-                <div id="control-panel">
-                    <div id="code-info">
-                        代码介绍
-                    </div>
-                </div>
-                <div id="code"></div>
+                <div id="html-code"></div>
+                <div id="css-code"></div>
             </div>
             <div class="handler-container"></div>
             <div class="right-container">
@@ -34,7 +29,7 @@
                         <div class="camera"></div>
                         <div class="sensor"></div>
                         <div class="speaker"></div>
-                        <iframe src="/frame.html" id="iframe" name="iframe" class="screen" frameborder="0" width="100%" height="100%"></iframe>
+                        <iframe src="" id="iframe" name="iframe" class="screen" frameborder="0" width="100%" height="100%"></iframe>
                         <div class="home"></div>
                         <div class="bottom-bar"></div>
                     </div>
@@ -48,6 +43,7 @@
         <script src="/dep/ace/theme-chrome.js"></script>
         <script src="/dep/ace/mode-css.js"></script>
         <script src="/dep/ace/mode-less.js"></script>
+        <script src="/dep/ace/mode-html.js"></script>
         <script>
             var globalData = {};
 

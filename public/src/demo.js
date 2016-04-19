@@ -9,6 +9,10 @@ define(function (require) {
 
     var abs = Math.abs;
 
+    var htmlContainer = $('#html-code');
+    var cssContainer = $('#css-code');
+    var iframeNode = $('#iframe');
+
     /**
      * ace编辑器
      *
@@ -23,28 +27,28 @@ define(function (require) {
      * @param {string} type 代码类型
      */
     function initAceEditor(type) {
-        // var editor = ace.edit(type + '-editor');
-        var editor = ace.edit('code');
+        var editor = ace.edit(type + '-code');
+        // var editor = ace.edit('html-code');
 
         editor.$blockScrolling = Infinity;
         editor.setTheme('ace/theme/chrome');
 
         editor.getSession().setUseWorker(false);
         editor.getSession().setMode('ace/mode/' + type);
-        editor.setOption("showPrintMargin", false);
+        editor.setOption('showPrintMargin', false);
         editor.setOption('wrap', false);
         editor.setOption('highlightActiveLine', false);
 
         var codeVal = editor.getSession().getValue();
 
-        var beautified = cssbeautify(codeVal, {
-            indent: '    ',
-            autosemicolon: true
-        });
-        editor.getSession().setValue(beautified);
-        editor.getSession().selection.selectAll();
+        // var beautified = cssbeautify(codeVal, {
+        //     indent: '    ',
+        //     autosemicolon: true
+        // });
+        // editor.getSession().setValue(beautified);
+        // editor.getSession().selection.selectAll();
+        editor.getSession().setValue(decodeURI(codeVal));
 
-        // editor.getSession().setValue(codeVal);
         // editor.getSession().setTabSize(4);
         // editor.getSession().setUseWrapMode(true);
 
@@ -79,12 +83,61 @@ define(function (require) {
 
     exports.init = function () {
         checkHash();
-        $('#code').html(''
-            + 'a d{'
-            +     'color: red;'
-            + '}'
-        );
-        initAceEditor('css');
+        // $('#html-code').html(encodeURI(''
+        //     + '<div class="hb-rain-container">'
+        //     +   '<div class="hb-rain">'
+        //     +       '<div class="hb-rain-content"></div>'
+        //     +       '<div class="hb-rain-left-wing"></div>'
+        //     +       '<div class="hb-rain-right-wing"></div>'
+        //     +   '</div>'
+        //     + '</div>')
+        //     // + 'a d{'
+        //     // +     'color: red;'
+        //     // + '}'
+        // );
+        // initAceEditor('html');
+
+        // $.ajax({
+        //     method: 'post',
+        //     url: '/format/html?aaa=1',
+        //     dataType: 'json',
+        //     data: {
+        //         content: ''
+        //             + '<div class="1hb-rain-container">'
+        //             +   '<div class="1hb-rain">'
+        //             +       '<div class="1hb-rain-content"></div>'
+        //             +       '<div class="1hb-rain-left-wing"></div>'
+        //             +       '<div class="1hb-rain-right-wing"></div></div></div>'
+        //     }
+        // }).then(function (data, textStatus, jqXHR) {
+        //     htmlContainer.html(encodeURI(data.data.content));
+        // }, function (jqXHR, textStatus, errorThrown) {
+        //     htmlContainer.html('解析 html 代码错误');
+        // }).always(function () {
+        //     initAceEditor('html');
+        // });
+
+        $.ajax({
+            method: 'post',
+            url: '/format/htmlcss',
+            dataType: 'json',
+            data: {
+                htmlContent: ''
+                    + '<div class="1hb-rain-container">'
+                    +   '<div class="1hb-rain">'
+                    +       '<div class="1hb-rain-content"></div><div class="1hb-rain-left-wing"></div>'
+                    +       '<div class="1hb-rain-right-wing"></div></div></div>',
+                cssContent: 'a{color:red;}'
+            }
+        }).then(function (data, textStatus, jqXHR) {
+            htmlContainer.html(encodeURI(data.data.htmlContent));
+            initAceEditor('html');
+
+            cssContainer.html(encodeURI(data.data.cssContent));
+            initAceEditor('css');
+
+            iframeNode.attr('src', require.toUrl('../' + 'frame.html'));
+        });
     };
 
     return exports;
