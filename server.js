@@ -71,15 +71,12 @@ function start(port) {
     });
 
     var server = app.listen(port);
-    server.on('close', function () {
-        fs.unlinkSync(path.join(__dirname, 'views/frame.ejs'));
-        console.log(' Stopping ...');
-    });
 
-    process.on('SIGINT', function () {
-        server.close(function () {
-            process.exit(0);
-        });
+    process.on('SIGINT', function() {
+        server.close();
+        fs.unlinkSync(path.join(__dirname, 'views/frame.ejs'));
+        fs.unlinkSync(path.join(__dirname, 'public/frame.html'));
+        process.exit(0);
     });
 
     edp.log.info('Webserver start.');

@@ -1,15 +1,7 @@
+
 var beautify = require('js-beautify');
 
-var format = {
-    html: function (req, res) {
-        var getArgs = req.query;
-        var postArgs = req.body;
-        console.warn(getArgs);
-        console.warn(postArgs);
-        res.setHeader('Content-Type', 'text/javascript; charset=UTF-8');
-        res.end('content');
-    }
-};
+var data = require('./data');
 
 function formatHTML(app) {
     var backData = {
@@ -77,8 +69,24 @@ function formatHTMLCSS(app) {
     });
 }
 
+function list(app) {
+    var backData = {
+        status: 0,
+        data: {
+            list: []
+        }
+    };
+
+    app.get('/list', function (req, res) {
+        backData.data.list = data;
+        res.setHeader('Content-Type', 'text/javascript; charset=UTF-8');
+        res.end(JSON.stringify(backData));
+    });
+}
+
 exports.init = function (app) {
     formatHTML(app);
     formatCSS(app);
     formatHTMLCSS(app);
+    list(app);
 };
