@@ -9,15 +9,8 @@
         <meta content="yes" name="apple-mobile-web-app-capable" />
         <meta content="black" name="apple-mobile-web-app-status-bar-style" />
         <meta content="telephone=no" name="format-detection" />
-        <link rel="stylesheet" type="text/css" href="src/css/frame.css">
+        <style><%= baseCssContent %></style>
+        <style><%- cssContent %></style>
     </head>
-    <body>
-        <div class="hb-rain-container">
-            <div class="hb-rain">
-                <div class="hb-rain-content"></div>
-                <div class="hb-rain-left-wing"></div>
-                <div class="hb-rain-right-wing"></div>
-            </div>
-        </div>
-    </body>
+    <body><%- htmlContent %></body>
 </html>

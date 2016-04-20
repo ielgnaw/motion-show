@@ -2,8 +2,12 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var path = require('path');
 var lessCompiler = require('express-less-middleware');
+var less = require('less');
+var ejs = require('ejs');
 
 var ajax = require('./ajax');
+
+var baseCSS = '';
 
 exports.init = function (app) {
 
@@ -26,11 +30,34 @@ exports.init = function (app) {
     exports.routeTest(app);
     exports.routeAjaxTest(app);
 
-
     exports.routeT(app);
 
     ajax.init(app);
+
+    initCSS();
 };
+
+function initCSS() {
+    var lessContent = fs.readFileSync(path.join(__dirname, '../views/base.less'), 'utf8');
+    less.render(lessContent, {
+        paths: [path.join(__dirname)],
+        compress: true
+    }, function (e, output) {
+        baseCSS = output.css;
+        var ret = ejs.render(fs.readFileSync(path.join(__dirname, '../views/tpl.ejs'), 'utf8'), {
+            baseCssContent: output.css,
+            cssContent: '<%- cssContent %>',
+            htmlContent: '<%- htmlContent %>'
+        });
+        console.warn(ret);
+        var frameTpl = ['frame.ejs'].join('');
+        fs.writeFile(path.join(__dirname, '../views/frame.ejs'), ret, function(err){
+            if (err) {
+                throw err;
+            }
+        });
+    });
+}
 
 // TODO: 把基础的 less 编译成 css 并发送到前端，便于前端获取基础的 css 代码
 exports.routeBaseCSS = function (app) {
@@ -146,10 +173,38 @@ exports.routeAjaxTest = function (app) {
 };
 
 exports.routeT = function (app) {
+    // 1. 生成 iframe 的 html 和 css 代码返回给 demo.html 的代码编辑器展示
+    // 2. 把生成的 html 和 css 组装成一个页面作为 iframe 的 html 内容
     app.get('/demo', function (req, res) {
-        res.setHeader('Content-Type', 'text/html; charset=UTF-8');
-        res.sendFile(path.resolve(__dirname, 'aaa.tpl'));
+        var getArgs = req.query;
+        console.warn(getArgs);
+        // res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+        // res.sendFile(path.resolve(__dirname, 'aaa.tpl'));
         // res.end('content');
         // res.redirect('http://baidu.com');
+
+        // res.render('tpl.ejs', {
+        //     name: '试试'
+        // });
+
+        var lessContent = fs.readFileSync(path.join(__dirname, '../views/11.less'), 'utf8');
+        less.render(lessContent, {
+            paths: [path.join(__dirname)],
+            compress: true
+        }, function (e, output) {
+            var middleRet = ejs.render(fs.readFileSync(path.join(__dirname, '../views/frame.ejs'), 'utf8'), {
+                cssContent: output.css.replace(baseCSS, ''),
+                htmlContent: ''
+                    + '<div class="hb-rain-container">'
+                    +   '<div class="hb-rain">'
+                    +       '<div class="hb-rain-content"></div>'
+                    +       '<div class="hb-rain-left-wing"></div>'
+                    +       '<div class="hb-rain-right-wing"></div>'
+                    +   '</div>'
+                    + '</div>'
+            });
+            res.setHeader('Content-Type', 'text/html; charset=UTF-8');
+            res.end(middleRet);
+        });
     });
 };

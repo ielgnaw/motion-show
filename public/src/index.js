@@ -10,7 +10,7 @@ define(function (require) {
             title: '',
             img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/1.png',
             // link: '/demo.html?name=hb-rain',
-            link: '/demo',
+            link: '/demo?name=1',
             desc: ''
         },
         {

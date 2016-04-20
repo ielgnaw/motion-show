@@ -1,0 +1,68 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>motion-show</title>
+        <meta name="keywords" content="motion-show" />
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+        <meta name="format-detection" content="telphone=no" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" type="text/css" href="src/css/demo.css">
+        <script src="dep/esl/esl.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="code-container">
+                <div id="html-code"></div>
+                <div id="css-code"></div>
+            </div>
+            <div class="handler-container"></div>
+            <div class="right-container">
+                <div class="right-panel">
+                    <div class="simulate-device ip6p black">
+                        <div class="top-bar"></div>
+                        <div class="sleep"></div>
+                        <div class="volume"></div>
+                        <div class="camera"></div>
+                        <div class="sensor"></div>
+                        <div class="speaker"></div>
+                        <iframe src="<%- frameSrc %>" id="iframe" name="iframe" class="screen" frameborder="0" width="100%" height="100%"></iframe>
+                        <div class="home"></div>
+                        <div class="bottom-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/nav.js"></script>
+        <script src="/test.js"></script>
+        <script src="/require.config.js"></script>
+        <script src="/dep/ace/ace.min.js"></script>
+        <script src="/dep/ace/theme-chrome.js"></script>
+        <script src="/dep/ace/mode-css.js"></script>
+        <script src="/dep/ace/mode-less.js"></script>
+        <script src="/dep/ace/mode-html.js"></script>
+        <script>
+            var globalData = {};
+
+            (function () {
+                var width = document.documentElement.clientWidth;
+                var height = document.documentElement.clientHeight;
+                globalData.width = width;
+                globalData.height = height;
+
+                var supportTouch = ('ontouchstart' in window)
+                    || window.DocumentTouch && document instanceof window.DocumentTouch;
+
+                globalData.touchStartEvent = (supportTouch ? 'touchstart' : 'mousedown');
+                globalData.touchMoveEvent = (supportTouch ? 'touchmove' : 'mousemove');
+                globalData.touchEndEvent = (supportTouch ? 'touchend' : 'mouseup');
+            })();
+            require(['demo'], function (demo) {
+                demo.init();
+            });
+        </script>
+    </body>
+</html>
