@@ -42,7 +42,7 @@ define(function (require) {
                 + '" style="background-image: url('
                 +   project.img
                 + ');" target="_blank">'
-                +   '<div class="desc">'
+                +   '<div class="title">'
                 +       title
                 +   '</div>'
                 + '</a>';

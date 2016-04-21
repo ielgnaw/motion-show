@@ -1,150 +1,33 @@
 /**
- * @file 数据
+ * @file 数据模块
  * @author ielgnaw(wuji0223@gmail.com)
  */
 
 var path = require('path');
 var fs = require('fs');
 
-/**
- * create uuid
- *
- * @return {string} uuid
- */
-function generateUUID() {
-    var d = new Date().getTime();
-    // xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
-    return 'yxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
-        d = Math.floor(d / 16);
-        return (c === 'x' ? r : ( r & 0x3 | 0x8)).toString(16);
-    });
-}
-
-// var list = [
-//     {
-//         id: generateUUID(),
-//         title: '小翅膀',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     },
-//     {
-//         id: generateUUID(),
-//         title: '',
-//         img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//         link: '/demo',
-//         desc: ''
-//     }
-// ];
-
-// /**
-//  * 把 list 中每个元素与它对应的 html, css 代码映射起来
-//  */
-// exports.mapToCode = function () {
-//     var copy = list.concat();
-//     var i = -1;
-//     var len = copy.length;
-//     // console.warn(path.join(__dirname, '../data/1.js'));
-//     // console.warn(require('../data/1'));
-//     while (++i < len) {
-//         // console.warn(require('../data/' + (i + 1)));
-//         // console.warn(i, copy[i]);
-//     }
-// };
-
 var list = [];
 
+/**
+ * 首页请求 /list 后会生成所有的数据
+ * 并把每个实例 demo 的 html, css 代码挂载到 list 的 item 中
+ *
+ * @return {Array.<Object>} 所有数据
+ */
 exports.generateList = function () {
-    var folder = path.join(__dirname, '../data/');
-    list = require(folder)();
+    if (!list.length) {
+        list = require(path.join(__dirname, '../data/'))();
+    }
     return list;
 };
 
+/**
+ * 根据 id 获取某个具体的 demo
+ *
+ * @param {string} id id
+ *
+ * @return {Object} 具体的 demo 数据
+ */
 exports.getById = function (id) {
     id = String(id);
     var ret = null;

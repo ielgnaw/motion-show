@@ -1,8 +1,17 @@
+/**
+ * @file ajax 请求的模块
+ * @author ielgnaw(wuji0223@gmail.com)
+ */
 
 var beautify = require('js-beautify');
-
 var model = require('./model');
+var render = require('./render');
 
+/**
+ * 格式化 html 代码的请求
+ *
+ * @param {Object} app express 实例
+ */
 function formatHTML(app) {
     var backData = {
         status: 0,
@@ -19,6 +28,11 @@ function formatHTML(app) {
     });
 }
 
+/**
+ * 格式化 css 代码的请求
+ *
+ * @param {Object} app express 实例
+ */
 function formatCSS(app) {
     var backData = {
         status: 0,
@@ -35,6 +49,11 @@ function formatCSS(app) {
     });
 }
 
+/**
+ * 格式化 html 代码和 css 代码的请求
+ *
+ * @param {Object} app express 实例
+ */
 function formatHTMLCSS(app) {
     var backData = {
         status: 0,
@@ -61,6 +80,7 @@ function formatHTMLCSS(app) {
         catch (e) {
             cssContent = '解析 CSS 代码错误';
         }
+
         backData.data.htmlContent = htmlContent;
         backData.data.cssContent = cssContent;
 
@@ -69,6 +89,11 @@ function formatHTMLCSS(app) {
     });
 }
 
+/**
+ * 首页请求所有 list
+ *
+ * @param {Object} app express 实例
+ */
 function list(app) {
     var backData = {
         status: 0,
@@ -84,9 +109,34 @@ function list(app) {
     });
 }
 
+/**
+ * refresh
+ *
+ * @param {Object} app express 实例
+ */
+function refresh(app) {
+    var backData = {
+        status: 0
+    };
+
+    app.post('/refresh', function (req, res) {
+        var getArgs = req.query;
+        var postArgs = req.body;
+        render.renderDemo(postArgs.htmlContent, postArgs.cssContent, res);
+        res.setHeader('Content-Type', 'text/javascript; charset=UTF-8');
+        res.end(JSON.stringify(backData));
+    });
+}
+
+/**
+ * 初始化
+ *
+ * @param {Object} app express 实例
+ */
 exports.init = function (app) {
     formatHTML(app);
     formatCSS(app);
     formatHTMLCSS(app);
     list(app);
+    refresh(app);
 };

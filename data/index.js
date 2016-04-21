@@ -1,6 +1,26 @@
+/**
+ * @file 组装 data
+ * @author ielgnaw(wuji0223@gmail.com)
+ */
 
 var fs = require('fs');
 var path = require('path');
+
+/**
+ * create uuid
+ *
+ * @return {string} uuid
+ */
+function generateUUID() {
+    var d = new Date().getTime();
+    // xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx
+    return 'yxxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c === 'x' ? r : ( r & 0x3 | 0x8)).toString(16);
+    });
+}
+
 
 module.exports = function () {
     var ret = [];
@@ -25,7 +45,7 @@ module.exports = function () {
             });
 
             ret.push({
-                id: config.id,
+                id: config.id || generateUUID(),
                 title: config.title,
                 img: config.img,
                 desc: config.desc,
@@ -38,13 +58,3 @@ module.exports = function () {
 
     return ret;
 };
-
-// module.exports = {
-//     id: '1',
-//     title: '小翅膀',
-//     img: 'http://boscdn.bpc.baidu.com/mms-res/ielgnaw/motion-tool/1.gif',
-//     link: '/demo',
-//     desc: '',
-//     htmlContent: fs.readFileSync(path.join(__dirname, '/1.html'), 'utf8'),
-//     lessContent: fs.readFileSync(path.join(__dirname, '/1.less'), 'utf8')
-// };

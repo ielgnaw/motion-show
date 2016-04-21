@@ -8,7 +8,7 @@ var edp = require('edp-core');
 var path = require('path');
 var fs = require('fs');
 
-var PORT = 8000;
+var PORT = 8001;
 
 /**
  * 机器 ip
