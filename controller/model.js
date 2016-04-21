@@ -141,12 +141,7 @@ var list = [];
 
 exports.generateList = function () {
     var folder = path.join(__dirname, '../data/');
-    var files = fs.readdirSync(folder);
-    files.forEach(function (file) {
-        var dir = path.resolve(folder, file);
-        var indexFile = path.resolve(dir, 'index.js');
-        list.push(require(indexFile));
-    });
+    list = require(folder)();
     return list;
 };
 
