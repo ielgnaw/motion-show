@@ -1,5 +1,68 @@
 @import '../views/base.less';
 
+@baseZIndex: 10;
+
+.hb-rain-container {
+    z-index: @baseZIndex - 4;
+    .hb-rain {
+        z-index: @baseZIndex - 4;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 82px;
+        height: 88px;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+                transform: translate3d(-50%, -50%, 0);
+        .removeBlur();
+        .hb-rain-content {
+            position: absolute;
+            width: 80px;
+            height: 88px;
+            z-index: 3;
+            // background-image: url(../img/sprite1.png);
+            .setBackgroundImg('sprite1-1fd64f21.png');
+            background-size: 160px 309px;
+            background-repeat: no-repeat;
+            background-position: 0px -136px;
+            .removeBlur();
+        }
+        .hb-rain-left-wing {
+            position: absolute;
+            width: 24px;
+            height: 38px;
+            top: 0;
+            left: 0;
+            // background-image: url(../img/sprite1.png);
+            .setBackgroundImg('sprite1-1fd64f21.png');
+            background-size: 160px 309px;
+            background-repeat: no-repeat;
+            background-position: -90px -153px;
+            .removeBlur();
+            .ani-name(leftWing);
+            .ani-duration(1s);
+            .ani-timing-function(linear);
+            .ani-iteration-count(infinite);
+        }
+        .hb-rain-right-wing {
+            position: absolute;
+            width: 36px;
+            height: 24px;
+            top: 47px;
+            right: -8px;
+            // background-image: url(../img/sprite1.png);
+            .setBackgroundImg('sprite1-1fd64f21.png');
+            background-size: 160px 309px;
+            background-repeat: no-repeat;
+            background-position: -125px -173px;
+            .removeBlur();
+            .ani-name(rightWing);
+            .ani-duration(1s);
+            .ani-timing-function(linear);
+            .ani-iteration-count(infinite);
+        }
+    }
+}
+
 @-webkit-keyframes leftWing {
     0% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
@@ -88,68 +151,5 @@
     100% {
         -webkit-transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
                 transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0);
-    }
-}
-
-@baseZIndex: 10;
-
-.hb-rain-container {
-    z-index: @baseZIndex - 4;
-    .hb-rain {
-        z-index: @baseZIndex - 4;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 82px;
-        height: 88px;
-        -webkit-transform: translate3d(-50%, -50%, 0);
-                transform: translate3d(-50%, -50%, 0);
-        .removeBlur();
-        .hb-rain-content {
-            position: absolute;
-            width: 80px;
-            height: 88px;
-            z-index: 3;
-            // background-image: url(../img/sprite1.png);
-            .setBackgroundImg('sprite1-1fd64f21.png');
-            background-size: 160px 309px;
-            background-repeat: no-repeat;
-            background-position: 0px -136px;
-            .removeBlur();
-        }
-        .hb-rain-left-wing {
-            position: absolute;
-            width: 24px;
-            height: 38px;
-            top: 0;
-            left: 0;
-            // background-image: url(../img/sprite1.png);
-            .setBackgroundImg('sprite1-1fd64f21.png');
-            background-size: 160px 309px;
-            background-repeat: no-repeat;
-            background-position: -90px -153px;
-            .removeBlur();
-            .ani-name(leftWing);
-            .ani-duration(1s);
-            .ani-timing-function(linear);
-            .ani-iteration-count(infinite);
-        }
-        .hb-rain-right-wing {
-            position: absolute;
-            width: 36px;
-            height: 24px;
-            top: 47px;
-            right: -8px;
-            // background-image: url(../img/sprite1.png);
-            .setBackgroundImg('sprite1-1fd64f21.png');
-            background-size: 160px 309px;
-            background-repeat: no-repeat;
-            background-position: -125px -173px;
-            .removeBlur();
-            .ani-name(rightWing);
-            .ani-duration(1s);
-            .ani-timing-function(linear);
-            .ani-iteration-count(infinite);
-        }
     }
 }

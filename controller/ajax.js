@@ -1,7 +1,7 @@
 
 var beautify = require('js-beautify');
 
-var data = require('./data');
+var model = require('./model');
 
 function formatHTML(app) {
     var backData = {
@@ -78,7 +78,7 @@ function list(app) {
     };
 
     app.get('/list', function (req, res) {
-        backData.data.list = data;
+        backData.data.list = model.generateList();
         res.setHeader('Content-Type', 'text/javascript; charset=UTF-8');
         res.end(JSON.stringify(backData));
     });

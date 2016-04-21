@@ -37,6 +37,8 @@ define(function (require) {
             str += ''
                 + '<a class="item thumbnail" href="'
                 +   project.link
+                + '?id='
+                +   project.id
                 + '" style="background-image: url('
                 +   project.img
                 + ');" target="_blank">'

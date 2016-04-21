@@ -5,6 +5,7 @@ var lessCompiler = require('express-less-middleware');
 var less = require('less');
 var ejs = require('ejs');
 var ajax = require('./ajax');
+var model = require('./model');
 
 /**
  * 基础的 css 内容，这部分内容不显示在代码编辑器中
@@ -70,12 +71,21 @@ var route = {
             //     name: '试试'
             // });
 
-            var lessContent = fs.readFileSync(path.join(__dirname, '../views/11.less'), 'utf8');
+            // TODO: 错误处理
+            var id = getArgs.id;
+            var curData = model.getById(id);
+            if (!curData) {
+                // TODO 错误处理
+                return;
+            }
+
+            var lessContent = curData.lessContent;
             less.render(lessContent, {
                 paths: [path.join(__dirname)],
                 compress: true
             }, function (e, output) {
                 if (e) {
+                    console.warn(e);
                     throw e;
                 }
                 var cssContent = output.css.replace(baseCSS, '');
@@ -165,4 +175,6 @@ exports.init = function (app) {
     ajax.init(app);
 
     compileCSS();
+
+    // model.mapToCode();
 };
